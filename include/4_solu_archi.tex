@@ -95,7 +95,7 @@ NbDataField & 3 & décrémentation, initialisation à 1, 3 ou 7 & décompteur, d
 % Page 21 shema haut 
 \begin{figure}[H]
     \centering
-    \includegraphics[width=0.8\linewidth]{images/inter/Structure_Reception_trame.pdf}
+    \includegraphics[width=0.95\linewidth]{images/inter/Structure_Reception_trame.pdf}
     \caption{Structure partie Opérative Reception Trame}
     \label{fig:placeholder}
 \end{figure}
@@ -145,8 +145,10 @@ Pour rappel voici tous les signaux associés à ce bloc :
 \newline
 
 \begin{center}
-    \begin{tabular}{| c || c | c | c |}
-     \hline			
+\renewcommand{\arraystretch}{1.2} % espace vertical
+\small % pour uniformiser la taille du texte
+    \begin{tabularx}{\textwidth}{|c||c|c|X|}
+     \hline		
        \textbf{Signaux} & \textbf{Mode} & \textbf{Type} & \textbf{Description}  \\ \hline 
        D07 & INOUT & \texttt{STD\_LOGIC\_VECTOR(7 DOWNTO 0)} & Bus de données \\
        nCS & IN & \texttt{STD\_LOGIC} & Chip Select \\
@@ -161,7 +163,7 @@ Pour rappel voici tous les signaux associés à ce bloc :
        OctetLu & IN & \texttt{STD\_LOGIC\_VECTOR(7 DOWNTO 0)} & Bus de données de sortie \\
        OctetLu\_RD & OUT & \texttt{STD\_LOGIC} & Sélection de la mémoire (Control / Data) \\
      \hline  
-    \end{tabular}
+    \end{tabularx}
 \end{center}
 
 Pour le bloc d'interface Microprocesseur, nous implémentons une machine séquentielle qui permet de distinguer une partie opérative et une partie commande, assurant ainsi la gestion efficace du controle du systeme et la lecture des différentes informations.
@@ -211,8 +213,10 @@ Pour rappel voici tous les signaux associés à ce bloc :
 \newline
 
 \begin{center}
-    \begin{tabular}{| c || c | c | c |}
-     \hline			
+\renewcommand{\arraystretch}{1.2} % espace vertical
+\small % pour uniformiser la taille du texte
+    \begin{tabularx}{\textwidth}{|c||c|c|X|}
+     \hline				
        \textbf{Signaux} & \textbf{Mode} & \textbf{Type} & \textbf{Description}  \\ \hline 
        OctetRecu & IN & \texttt{STD\_LOGIC\_VECTOR(7 DOWNTO 0)} & Bus de données d’entrée \\
        OctetRecu\_WR & IN & \texttt{STD\_LOGIC} & Read / Write opération \\
@@ -220,7 +224,7 @@ Pour rappel voici tous les signaux associés à ce bloc :
        OctetLu & OUT & \texttt{STD\_LOGIC\_VECTOR(7 DOWNTO 0)} & Bus de données de sortie \\
        OctetLu\_RD & IN & \texttt{STD\_LOGIC} & Sélection de la mémoire (Control / Data) \\
      \hline  
-    \end{tabular}
+    \end{tabularx}
 \end{center}
 
 Étant donné que ce système est moins complexe que les deux interfaces précédentes, nous avons choisi de ne pas le réaliser sous forme de machine séquentielle et de le représenter directement comme un bloc, comme montré ci-dessous : 
@@ -240,8 +244,10 @@ Pour rappel voici tous les signaux associés à ce bloc :
 \newline
 
 \begin{center}
-    \begin{tabular}{| c || c | c | c |}
-     \hline			
+\renewcommand{\arraystretch}{1.2} % espace vertical
+\small % pour uniformiser la taille du texte
+    \begin{tabularx}{\textwidth}{|c||c|c|X|}
+     \hline				
        \textbf{Signaux} & \textbf{Mode} & \textbf{Type} & \textbf{Description}  \\ \hline 
        Erreur\_Start & IN & \texttt{STD\_LOGIC} & Bit d’erreur de Start \\
        Erreur\_Stop & IN & \texttt{STD\_LOGIC} & Bit d’erreur de Stop\\
@@ -253,7 +259,7 @@ Pour rappel voici tous les signaux associés à ce bloc :
        DecNbOctet & IN & \texttt{STD\_LOGIC} & Flag de lecture pour FIFO \\
        EtatLu\_RST & IN & \texttt{STD\_LOGIC} & Reset de l'état lu \\
      \hline  
-    \end{tabular}
+    \end{tabularx}
 \end{center}
 
 Étant donné que ce système présente une complexité similaire et une facilité d’implémentation comparable, nous le conservons également sous forme de bloc, comme montré ci-dessous : 
