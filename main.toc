@@ -4,8 +4,8 @@
 \contentsline {section}{\numberline {3}Cahier des Charges}{6}{section.3}%
 \contentsline {section}{\numberline {4}Description des différentes spécifications définies en travaux dirigés}{9}{section.4}%
 \contentsline {subsection}{\numberline {4.1}Interface Microprocesseur}{9}{subsection.4.1}%
-\contentsline {subsection}{\numberline {4.2}Reception Trame}{9}{subsection.4.2}%
-\contentsline {subsection}{\numberline {4.3}FIFO}{9}{subsection.4.3}%
+\contentsline {subsection}{\numberline {4.2}Reception Trame}{10}{subsection.4.2}%
+\contentsline {subsection}{\numberline {4.3}FIFO}{10}{subsection.4.3}%
 \contentsline {subsection}{\numberline {4.4}ETAT}{10}{subsection.4.4}%
 \contentsline {section}{\numberline {5}Description et justification de la structure fonctionnelle}{11}{section.5}%
 \contentsline {section}{\numberline {6}Description et justification de la solution architectureale obtenue pour le circuit}{15}{section.6}%
