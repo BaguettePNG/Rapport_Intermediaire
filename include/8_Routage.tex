@@ -2,12 +2,16 @@
 }
 \subsection{Interface Microprocesseur}
 
-Après l’étape de \textbf{synthèse}, nous pouvons nous intéresser à l’assignation des ressources matérielles du système.\\
-Pour cela, nous utilisons le logiciel \textbf{Vivado} (étant donné que les outils de HDL n’étaient pas disponibles le jour du TP), qui permet de générer un schéma RTL ainsi qu’une vue du routage associé à l’interface microprocesseur.
+Après l'étape de \textbf{synthèse}, nous pouvons nous intéresser à l'assignation des ressources 
+matérielles du système.\\
+Pour cela, nous utilisons le logiciel \textbf{Vivado} (étant donné que les outils de HDL n'étaient 
+pas disponibles le jour du TP), qui permet de générer un schéma RTL ainsi qu'une vue du routage 
+associé à l'interface microprocesseur.
 \newline
 
-Dans un premier temps, Nous allons resynthétiser le design afin d’obtenir le schéma RTL.
-Ce schéma, présenté ci-dessous, illustre les ressources logiques utilisées pour implémenter l’interface microprocesseur.
+Dans un premier temps, Nous allons resynthétiser le design afin d'obtenir le schéma RTL.
+Ce schéma, présenté ci-dessous, illustre les ressources logiques utilisées pour implémenter 
+l'interface microprocesseur.
 \newline
 
 \resizebox{\textwidth}{!}{%
@@ -16,7 +20,8 @@ Ce schéma, présenté ci-dessous, illustre les ressources logiques utilisées p
 
 \vspace{10pt}
 
-Par la suite, nous pouvons également observer la synthèse matérielle réalisée sur Vivado, qui transforme les ressources logiques en ressources matérielles pour le FPGA.
+Par la suite, nous pouvons également observer la synthèse matérielle réalisée sur Vivado, qui 
+transforme les ressources logiques en ressources matérielles pour le FPGA.
 \newline
 
 \begin{figure}[H]
@@ -26,14 +31,18 @@ Par la suite, nous pouvons également observer la synthèse matérielle réalis�
     \label{fig:rout_general}
 \end{figure}
 
-Cette synthese nous montre que la logique est transformée en ressource matérielle, notamment des LUT (Look-Up Tables) et des Flip-Flops, qui sont les éléments de base pour implémenter la logique dans un FPGA.
+Cette synthèse nous montre que la logique est transformée en ressource matérielle, notamment des 
+LUT (Look-Up Tables) et des Flip-Flops, qui sont les éléments de base pour implémenter la logique 
+dans un FPGA.
 \newline
 
-Les \textbf{LUT} (Look-Up Tables), éléments fondamentaux d’un FPGA, peuvent être considérées comme des portes logiques programmables capables de réaliser toute fonction booléenne. 
-Elles constituent la base de l’implémentation matérielle et offrent une vision schématique complète du système.  
+Les \textbf{LUT} (Look-Up Tables), éléments fondamentaux d'un FPGA, peuvent être considérées comme 
+des portes logiques programmables capables de réaliser toute fonction combinatoire. 
+Elles constituent la base de l'implémentation matérielle et offrent une vision schématique complète 
+du système.  
 \newline
 
-Prenons l’exemple d’une \textbf{LUT3} :  
+Prenons l'exemple d'une \textbf{LUT3} :  
 
 \begin{figure}[H]
     \centering
@@ -52,7 +61,7 @@ Prenons l’exemple d’une \textbf{LUT3} :
         \caption{Table de vérité associée}
         \label{fig:table_lut}
     \end{subfigure}
-    \caption{Illustration d’une LUT et de sa table de vérité}
+    \caption{Illustration d'une LUT et de sa table de vérité}
     \label{fig:lut_complete}
 \end{figure}
 
@@ -71,7 +80,7 @@ Nous observons également la présence de la partie opérative de l'interface Mi
 
 \medskip
 
-La suite du flot de conception consiste à lancer l’\textbf{implémentation} du système afin d’obtenir le routage complet. 
+La suite du flot de conception consiste à lancer l'\textbf{implémentation} du système afin d'obtenir le routage complet. 
 Vivado propose alors une vue générale du FPGA, mettant en évidence ses différentes zones fonctionnelles :  
 
 \begin{figure}[H]
@@ -108,7 +117,7 @@ celles-ci étant toutes reliées à des \textbf{buffers}.
 
 
 
-Un zoom encore plus détaillé permet d’observer le câblage interne des ressources identifiées lors de la synthèse.  
+Un zoom encore plus détaillé permet d'observer le câblage interne des ressources identifiées lors de la synthèse.  
 Par exemple, une \textbf{LUT3} est câblée de la manière suivante :  
 
 \begin{figure}[H]
@@ -117,7 +126,7 @@ Par exemple, une \textbf{LUT3} est câblée de la manière suivante :
     \begin{subfigure}[b]{0.35\linewidth}
         \centering
         \includegraphics[width=\linewidth]{images/Routage/Rou_3.png}
-        \caption{Connexion interne d’une LUT3}
+        \caption{Connexion interne d'une LUT3}
         \label{fig:rout_lut3a}
     \end{subfigure}
     \hfill
@@ -128,14 +137,14 @@ Par exemple, une \textbf{LUT3} est câblée de la manière suivante :
         \caption{Schéma détaillé du câblage LUT3}
         \label{fig:rout_lut3b}
     \end{subfigure}
-    \caption{Exemple de routage d’une LUT3 dans le FPGA}
+    \caption{Exemple de routage d'une LUT3 dans le FPGA}
     \label{fig:rout_lut3}
 \end{figure}
 
 \medskip
 
 Le résultat final est une représentation complète et hiérarchisée du système, directement mappée sur le FPGA. 
-\textbf{Vivado} offre ainsi la possibilité de visualiser l’ensemble du flot, depuis la description logique RTL jusqu’au routage physique détaillé.  
+\textbf{Vivado} offre ainsi la possibilité de visualiser l'ensemble du flot, depuis la description logique RTL jusqu'au routage physique détaillé.  
 
 En résumé, la conception suit une progression en trois étapes :  
 \begin{itemize}
@@ -144,6 +153,6 @@ En résumé, la conception suit une progression en trois étapes :
     \item le \textbf{routage} établit les interconnexions nécessaires au bon fonctionnement du circuit.  
 \end{itemize}
 
-Cette approche permet de passer d’une description abstraite en langage HDL à une implémentation matérielle 
+Cette approche permet de passer d'une description abstraite en langage HDL à une implémentation matérielle 
 concrète, où chaque fonction logique est traduite en ressources physiques. 
-Vivado fournit alors une vision globale et détaillée du FPGA, allant de la logique combinatoire jusqu’au câblage interne des composants.
+Vivado fournit alors une vision globale et détaillée du FPGA, allant de la logique combinatoire jusqu'au câblage interne des composants.

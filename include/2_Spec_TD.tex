@@ -2,13 +2,23 @@
 
 \subsection*{Objectif}
 
-Les spécifications ont pour objectif de définir le comportement attendu du système, autrement dit, ce qui doit être réalisé en réponse au cahier des charges. Elles constituent l’expression formelle des besoins fonctionnels, en se plaçant du point de vue de l’environnement du système — c’est-à-dire de tout ce qui est externe au circuit mais interagit avec lui.
+Les spécifications ont pour objectif de définir le comportement attendu du système, autrement dit, 
+ce qui doit être réalisé en réponse au cahier des charges. Elles constituent l'expression formelle 
+des besoins fonctionnels, en se plaçant du point de vue de l'environnement du système,
+c'est-à-dire, tout ce qui est externe au circuit mais interagit avec lui.
 \newline
 
-La phase de spécification représente la première étape de la conception d’un circuit. Elle adopte une approche boîte noire : on s’intéresse uniquement à ce que le système doit faire, sans se préoccuper des solutions techniques internes ni du comment il fonctionnera. Les spécifications sont donc indépendantes de la technologie utilisée.
+La phase de spécification représente la première étape de la conception d'un circuit. Elle adopte
+une approche boîte noire : on s'intéresse uniquement à ce que le système doit faire, sans se 
+préoccuper des solutions techniques internes ni du comment il fonctionnera. Les spécifications 
+sont donc indépendantes de la technologie utilisée.
 \newline
 
-Au départ, nous avions pour indication de créer un bloc capable de communiquer à la fois avec le système de trame LIN et avec le microcontrôleur. Afin de simplifier notre étude et nos spécifications, nous avons choisi de diviser le système en deux parties : la réception de trame, qui se chargera de gérer la réception des données octet par octet, et un autre bloc dédié à la communication avec le microcontrôleur.
+Au départ, nous avions pour indication de créer un bloc capable de communiquer à la fois avec 
+le système de trame LIN et avec le microcontrôleur. Afin de simplifier notre étude et nos 
+spécifications, nous avons choisi de diviser le système en deux parties : la réception de 
+trame, qui se chargera de gérer la réception des données octet par octet, et un autre bloc dédié à 
+la communication avec le microcontrôleur.
 \newline
 
 % Feuille 1 NOLAN 
@@ -22,7 +32,8 @@ Au départ, nous avions pour indication de créer un bloc capable de communiquer
 
 \subsection{Interface Microprocesseur}
 
-D'après les données du cahier des charges, nous pouvons définir tous les signaux nécessaires pour le système interface microprocesseur : 
+D'après les données du cahier des charges, nous pouvons définir tous les signaux nécessaires pour 
+le système réception trame : 
 
 \begin{center}
 \renewcommand{\arraystretch}{1.2} % espace vertical
@@ -59,7 +70,7 @@ D'après les données du cahier des charges, nous pouvons définir tous les sign
 
 \subsection{FIFO}
 
-Pour le moment, nous savons qu’il s’agit d’un registre de stockage fonctionnant en mode FIFO, destiné à mémoriser les données de réception d’une trame LIN : 
+Pour le moment, nous savons qu'il s'agit d'un registre de stockage fonctionnant en mode FIFO, destiné à mémoriser les données de réception d'une trame LIN : 
 
 \begin{center}
 \renewcommand{\arraystretch}{1.2} % pour un peu plus d'espace vertical

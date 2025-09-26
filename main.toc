@@ -13,7 +13,7 @@
 \contentsline {subsection}{\numberline {6.2}Architecture Reception Trame}{15}{subsection.6.2}%
 \contentsline {subsection}{\numberline {6.3}Architecture Interface MicroProcesseur}{19}{subsection.6.3}%
 \contentsline {subsection}{\numberline {6.4}Architecture FIFO}{21}{subsection.6.4}%
-\contentsline {subsection}{\numberline {6.5}Implémentation de l’État Interne}{22}{subsection.6.5}%
+\contentsline {subsection}{\numberline {6.5}Implémentation de l'État Interne}{22}{subsection.6.5}%
 \contentsline {section}{\numberline {7}Présentation du fonctionnement des fonctions}{24}{section.7}%
 \contentsline {subsection}{\numberline {7.1}Interface MicroProcesseur}{24}{subsection.7.1}%
 \contentsline {subsubsection}{\numberline {7.1.1}Réseau Combinatoire d’Entrée}{24}{subsubsection.7.1.1}%
